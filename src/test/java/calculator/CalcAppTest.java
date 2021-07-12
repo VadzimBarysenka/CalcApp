@@ -11,6 +11,6 @@ class CalcAppTest {
 
     @Test
     void calcExpression() {
-        assertEquals(EXPRESSION_RESULT,CalcExp.calc(EXPRESSION));
+        assertEquals(EXPRESSION_RESULT,CalcExp.getInstance().calc(EXPRESSION));
     }
 }

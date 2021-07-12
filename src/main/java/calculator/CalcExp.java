@@ -4,9 +4,21 @@ import java.util.*;
 
 
 public class CalcExp {
+    private static CalcExp instance = null;
+    private CalcExp() {
+    }
+    public static CalcExp getInstance() {
+        if (instance == null) {
+            instance = new CalcExp();
+        }
+        return instance;
+    }
     private static final List<String> MATH = Arrays.asList("*", "/", "-", "+");
 
-    public static int calc(String expression) {
+    public int calc (String expression) {
+        if (instance == null) {
+            instance = new CalcExp();
+        }
         List<String> stringList = new ArrayList<>();
         Collections.addAll(stringList, expression.trim().split(" "));
 
